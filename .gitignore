@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.pytest_cache/
+.coverage
+.DS_Store
+.env
+.env.*
+# Never commit passwords or email data
+*.mbox
+*.eml
+reports/

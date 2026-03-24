@@ -1,0 +1,63 @@
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name        = "phoenix-email"
+version     = "1.0.0"
+description = "Detect phishing, malware, fraud and impersonation in any email — local-first, agent-native, MIT."
+readme      = "README.md"
+license     = { text = "MIT" }
+authors     = [{ name = "Aegis Wizard" }]
+keywords    = ["email", "phishing", "security", "malware", "fraud", "detection", "agent", "imap", "osint"]
+requires-python = ">=3.9"
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Communications :: Email :: Filters",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# Zero required dependencies — uses only Python stdlib
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "ruff>=0.1",
+]
+
+[project.scripts]
+phoenix = "phoenix.cli:main"
+
+[project.urls]
+Homepage   = "https://github.com/aegiswizard/phoenix"
+Repository = "https://github.com/aegiswizard/phoenix"
+Issues     = "https://github.com/aegiswizard/phoenix/issues"
+
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["phoenix*"]
+
+[tool.black]
+line-length    = 100
+target-version = ["py39"]
+
+[tool.ruff]
+line-length = 100
+select      = ["E", "F", "I"]
